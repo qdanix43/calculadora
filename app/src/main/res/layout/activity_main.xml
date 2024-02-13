@@ -1,41 +1,129 @@
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#F6F1F1"
+    android:backgroundTint="#EFEAEA"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
 
     <TextView
         android:id="@+id/textViewPeso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="Peso: 50"
-        android:textSize="30dp" />
+        android:layout_marginTop="32dp"
+        android:text="Peso: 50 kg"
+        android:textColor="#0B0C0C"
+        android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/buttonSubir"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewPeso"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="63dp"
-        android:onClick="subirPeso"
-        android:text="+" />
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/buttonBajar"
+        <ImageButton
+            android:id="@+id/buttonBajar"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="Disminuir peso"
+            android:onClick="bajarPeso"
+            android:scaleType="fitCenter"
+            android:src="@drawable/restar" />
+
+        <ImageButton
+            android:id="@+id/buttonSubir"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:contentDescription="Aumentar peso"
+            android:onClick="subirPeso"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mas" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/buttonSubir"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="-49dp"
-        android:layout_marginEnd="235dp"
-        android:onClick="bajarPeso"
-        android:text="-" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:contentDescription="texto altura"
+        android:text="Altura: 1.50 cm"
+        android:textColor="#0B0C0C"
+        android:textSize="24sp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/buttonBajarAltura"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:contentDescription="Disminuir altura"
+            android:onClick="bajarAltura"
+            android:scaleType="fitCenter"
+            android:src="@drawable/restar" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="300"
+            android:min="100" />
+
+        <ImageButton
+            android:id="@+id/buttonSubirAltura"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:contentDescription="Aumentar altura"
+            android:onClick="subirAltura"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mas" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="380dp"
+        android:backgroundTint="#090908"
+        android:text="CALCULAR IMC"
+        android:textSize="18dp"
+        app:rippleColor="#00BCD4"
+
+        />
+
+    <TextView
+        android:id="@+id/textViewResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
+        android:text="IMC"
+        android:textColor="#070707"
+        android:textSize="24dp" />
 
 
 </RelativeLayout>
+
+
+
+
